@@ -9,7 +9,7 @@ import (
 
 var json = jsoniter.ConfigCompatibleWithStandardLibrary
 
-func loadJsonObject(fileName string) map[string]interface{} {
+func LoadJsonObject(fileName string) map[string]interface{} {
 	file, e := ioutil.ReadFile(fileName)
 	if e != nil {
 		fmt.Printf("File error: %v\n", e)
@@ -28,6 +28,6 @@ func initEnv(obj map[string]interface{}) {
 	}
 }
 
-func configureEnv(fileName string) {
+func ConfigureEnv(fileName string) {
 	initEnv(loadJsonObject(fileName))
 }
