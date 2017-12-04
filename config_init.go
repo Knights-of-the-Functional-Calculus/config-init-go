@@ -9,7 +9,7 @@ import (
 
 var json = jsoniter.ConfigCompatibleWithStandardLibrary
 
-func loadJsonObject(fileName string) {
+func loadJsonObject(fileName string) map[string]interface{} {
 	file, e := ioutil.ReadFile(fileName)
 	if e != nil {
 		fmt.Printf("File error: %v\n", e)
@@ -24,7 +24,7 @@ func loadJsonObject(fileName string) {
 
 func initEnv(obj map[string]interface{}) {
 	for k, v := range obj {
-		os.Setenv(k, v)
+		os.Setenv(k, v.(string))
 	}
 }
 
