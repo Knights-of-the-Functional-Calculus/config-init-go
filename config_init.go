@@ -29,5 +29,5 @@ func initEnv(obj map[string]interface{}) {
 }
 
 func ConfigureEnv(fileName string) {
-	initEnv(loadJsonObject(fileName))
+	initEnv(LoadJsonObject(fileName))
 }
